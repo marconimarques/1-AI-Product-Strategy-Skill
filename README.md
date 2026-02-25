@@ -98,9 +98,10 @@ Every document produced by this skill follows strict writing rules:
 
 ## Attribution
 
-The development of this skill was informed by the article **"How to Create an AI Product Strategy: The AI Strategic Lens Framework"** by Miqdad Jaffer, published in [The Product Compass](https://www.productcompass.pm) by Paweł Huryn (August 2, 2025).
+The development of this skill was based on the article **"How to Create an AI Product Strategy: The AI Strategic Lens Framework"** by Miqdad Jaffer, published in [The Product Compass](https://www.productcompass.pm) by Paweł Huryn (August 2, 2025).
 
 The article is a paid publication. This skill is an independent implementation and does not reproduce the article's text or frameworks. The reference is acknowledged here for transparency.
 
 If you find the topic valuable, consider supporting the original work directly at:
 https://www.productcompass.pm/p/how-to-create-an-ai-product-strategy
+
