@@ -4,7 +4,7 @@
 **Date:** 2026-02-25
 **Prepared by:** AI Product Strategy Framework - 7-Step Value Stack
 
-Prompt: Use /ai-product-strategy taking into consideration the idea as following. A MILP Solver focused on route and fleet allocation supported by an AI Agent that orchestrate the user queries and the solver functions. This is an idea of product targeting Brazilian trucking transportation business from 50 up to 500 trucks where there is a lack of Operations Research intelectual capital, decision making tools to maximize profitability or minimize costs.
+Prompt: Use /ai-product-strategy taking into consideration the idea as following. A MILP Solver focused on route optimization and fleet allocation supported by an AI Agent that orchestrate the user queries and the solver functions. This is an idea of product targeting Brazilian trucking transportation business from 50 up to 500 trucks where there is a lack of Operations Research intelectual capital, decision making tools to maximize profitability or minimize costs.
 
 ---
 
@@ -536,5 +536,6 @@ projects, the target segment will not sustain the behavioral change needed to bu
 loops that make the product defensible.
 
 Time to value is the product's most important engineering constraint.
+
 
 
