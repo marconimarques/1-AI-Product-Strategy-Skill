@@ -26,7 +26,7 @@ This skill turns Claude into a Senior AI Product Strategy Director that walks yo
 
 **Trust Architecture** - Builds transparency, control, and progressive autonomy directly into the product experience.
 
-The output is a structured strategy document suitable for executive review, investor presentations, or internal alignment - with every cited figure labeled by source so you know exactly what to verify.
+The output is a structured strategy document suitable for executive review, team alignment, with every cited figure labeled by source so you know exactly what to verify.
 
 ## Trigger Phrases
 
@@ -104,5 +104,6 @@ The article is a paid publication. This skill is an independent implementation a
 
 If you find the topic valuable, consider supporting the original work directly at:
 https://www.productcompass.pm/p/how-to-create-an-ai-product-strategy
+
 
 
