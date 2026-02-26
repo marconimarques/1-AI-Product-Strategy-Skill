@@ -76,7 +76,7 @@ The strategy document covers:
 
 | Section | What It Contains |
 |---|---|
-| Executive Summary | 2-3 sentence summary for CEO or investor |
+| Executive Summary | 2-3 sentence summary for stakeholders |
 | Step 1: Business Value | Value Stack - pain, outcome, AI leverage, strategic wedge |
 | Step 2: Data Moat | Input data, feedback data, proprietary context layer |
 | Step 3: AI UX Paradigm | Chosen paradigm with rationale and evolution path |
@@ -104,4 +104,5 @@ The article is a paid publication. This skill is an independent implementation a
 
 If you find the topic valuable, consider supporting the original work directly at:
 https://www.productcompass.pm/p/how-to-create-an-ai-product-strategy
+
 
