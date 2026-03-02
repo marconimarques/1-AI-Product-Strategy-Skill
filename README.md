@@ -14,7 +14,7 @@ The output is a single document suitable for the team review and alignment.
 
 ## How to Trigger It
 
-Say things like:
+Run as command "/ai-product-strategy" or say things like:
 
 - "Help me build an AI product strategy"
 - "Run the Value Stack framework for my product"
@@ -72,4 +72,5 @@ The article is a paid publication. This skill is an independent implementation a
 
 If you find the topic valuable, consider supporting the original work at:
 https://www.productcompass.pm/p/how-to-create-an-ai-product-strategy
+
 
