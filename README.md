@@ -1,6 +1,6 @@
 # AI Product Strategy Skill
 
-A Claude Code skill that runs the **7-step Value Stack framework** and produces a complete, executive-ready AI product strategy document grounded in your specific product context - not generic AI strategy advice.
+A Claude Code skill that runs the **7-step Value Stack framework** and produces a complete, executive-ready AI product strategy document grounded in your specific product context.
 
 ---
 
@@ -72,3 +72,4 @@ The article is a paid publication. This skill is an independent implementation a
 
 If you find the topic valuable, consider supporting the original work at:
 https://www.productcompass.pm/p/how-to-create-an-ai-product-strategy
+
