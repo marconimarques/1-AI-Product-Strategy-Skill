@@ -1,4 +1,4 @@
-# AI Product Strategy: VRP-Assisted Freight BID Optimizer
+# AI Product Strategy: MILP-Assisted Freight BID Optimizer
 **Stage:** Idea
 **Date:** 2026-03-03
 **Prepared by:** AI Product Strategy Framework
@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-A VRP Solver orchestrated by an AI Agent gives commercial and operations teams at a Brazilian mid-market trucking company the ability to run optimized, scenario-based truck allocation calculations during Freight BID processes - replacing manual spreadsheet estimates that currently leave competitive pricing on the table. The AI converts natural language queries into solver parameters, enabling non-technical managers to run baseline and what-if scenarios without Operations Research expertise. Expected business impact: improved freight rate competitiveness (R$/t) in BID submissions and improved margin accuracy on won contracts.
+A MILP Solver orchestrated by an AI Agent gives commercial and operations teams at a Brazilian mid-market trucking company the ability to run optimized, scenario-based truck allocation calculations during Freight BID processes - replacing manual spreadsheet estimates that currently leave competitive pricing on the table. The AI converts natural language queries into solver parameters, enabling non-technical managers to run baseline and what-if scenarios without Operations Research expertise. Expected business impact: improved freight rate competitiveness (R$/t) in BID submissions and improved margin accuracy on won contracts.
 
 ---
 
@@ -20,10 +20,10 @@ Commercial and operations managers currently run Freight BID calculations using 
 BID win rate and contract margin - specifically, the gap between the freight rate submitted and the real lowest viable rate, and the gap between estimated truck utilization and actual execution cost.
 
 **AI Leverage:**
-A VRP Solver computes near-optimal truck allocations across multi-pickup, multi-destination route structures in seconds - a calculation that would require a skilled OR analyst hours to approximate manually. The AI Agent layer makes this accessible to commercial and operations managers without OR expertise by translating natural language scenario queries into valid solver parameters. Non-AI alternatives (OR consultants, internal OR team) require capital and lead time that mid-market operators cannot sustain across every BID cycle.
+A MILP Solver computes near-optimal truck allocations across multi-pickup, multi-destination route structures in seconds - a calculation that would require a skilled OR analyst hours to approximate manually. The AI Agent layer makes this accessible to commercial and operations managers without OR expertise by translating natural language scenario queries into valid solver parameters. Non-AI alternatives (OR consultants, internal OR team) require capital and lead time that mid-market operators cannot sustain across every BID cycle.
 
 **Strategic Wedge:**
-AI-assisted VRP solving converts an unstructured BID gut-call into a repeatable optimization process - enabling the company to bid at its real cost floor rather than a padded estimate.
+AI-assisted MILP solving converts an unstructured BID gut-call into a repeatable optimization process - enabling the company to bid at its real cost floor rather than a padded estimate.
 
 ---
 
@@ -62,7 +62,7 @@ BID submissions are high-stakes and non-reversible - a wrong truck count produce
 After 12 to 18 months of validated BID outcomes, the product can evolve toward an Agent paradigm where the system proactively generates optimized BID scenarios when a new BID is loaded - rather than waiting for user queries. Full autonomy (auto-submitting BID rates) remains inappropriate given the financial stakes of each submission.
 
 **AI Injection Points:**
-- **Query-to-solver translation:** The user describes the BID in natural language ("15 collection points, 2 destinations, 800 tons over 5 days") and the AI structures this into valid VRP input parameters - removing the manual setup barrier that currently requires technical knowledge to operate any OR tool.
+- **Query-to-solver translation:** The user describes the BID in natural language ("15 collection points, 2 destinations, 800 tons over 5 days") and the AI structures this into valid MILP input parameters - removing the manual setup barrier that currently requires technical knowledge to operate any OR tool.
 - **Scenario suggestion:** After a baseline run, the AI proactively surfaces the 2 to 3 most relevant what-if scenarios ("What if collection points 3, 7, and 12 are consolidated into one pickup stop?" or "What if you substitute 40t trucks for 30t trucks on this route?") - capturing optimization value that users would not know to ask for on their own.
 - **Result interpretation:** The AI translates solver output (route assignments, truck counts, distance matrices) into plain-language cost implications ("This configuration requires 2 fewer trucks than your current spreadsheet estimate, reducing your projected fleet cost by approximately R$X per BID cycle") - making OR outputs directly actionable for a commercial decision.
 
@@ -73,7 +73,7 @@ After 12 to 18 months of validated BID outcomes, the product can evolve toward a
 **Primary Lever:** Domain-Specific Context
 
 **Day-One Advantage:**
-Generic OR tools (open-source VRP solvers, routing APIs) require technical parameter configuration that commercial and operations managers cannot perform without specialist support. This product embeds the Freight BID workflow context from day one - BID-specific input templates, R$/t cost framing, Brazilian freight terminology, and scenario output framed as "trucks needed and freight rate impact" rather than as abstract routing matrices.
+Generic OR tools (open-source MILP solvers, routing APIs) require technical parameter configuration that commercial and operations managers cannot perform without specialist support. This product embeds the Freight BID workflow context from day one - BID-specific input templates, R$/t cost framing, Brazilian freight terminology, and scenario output framed as "trucks needed and freight rate impact" rather than as abstract routing matrices.
 
 **How It Compounds:**
 As the tool accumulates this company's BID history, fleet costs, and route actuals, its default parameters and scenario suggestions become calibrated to this specific operation - making generic alternatives progressively less competitive even if they add similar surface features.
@@ -147,7 +147,7 @@ Users can override any solver parameter before running, accept or reject the AI'
 
 1. **Discovery first:** Before writing a line of solver code, conduct structured working sessions with the commercial and operations managers who run BID processes - ideally observing 1 to 2 live or recent BID cycles end to end. The deliverable is a concrete query taxonomy: the 10 to 20 most common question types and scenario requests that arise in a real BID, and a decision map showing exactly where the static spreadsheet fails and what decision the manager has to make without good data. This artifact gates all build decisions. Without it, the solver and agent will be built for an abstracted version of the problem, not the real one.
 
-2. **Baseline solver proof of concept:** Once the query taxonomy exists, build a minimal VRP solver integration (open-source solvers such as Google OR-Tools or HiGHS are viable starting points) connected to a simple AI Agent covering the 3 to 5 most common query types from discovery. Validate against one real historical BID - use a past BID with a known outcome to compare the solver's truck count recommendation against the spreadsheet estimate and actual execution. Success criteria: the solver's recommendation is closer to actuals than the spreadsheet on at least 2 of 3 test BIDs.
+2. **Baseline solver proof of concept:** Once the query taxonomy exists, build a minimal MILP solver integration (open-source solvers such as Google OR-Tools or HiGHS are viable starting points) connected to a simple AI Agent covering the 3 to 5 most common query types from discovery. Validate against one real historical BID - use a past BID with a known outcome to compare the solver's truck count recommendation against the spreadsheet estimate and actual execution. Success criteria: the solver's recommendation is closer to actuals than the spreadsheet on at least 2 of 3 test BIDs.
 
 **Next (3 to 9 months):**
 
@@ -162,16 +162,16 @@ Users can override any solver parameter before running, accept or reject the AI'
 **Executive Buy-In:**
 
 **Argument 1 - BID pricing accuracy as direct revenue:**
-If static spreadsheet calculations cause the company to over-estimate truck requirements by 10 to 15% on average across BID cycles, the company is systematically submitting freight rates that are higher than necessary - either losing BIDs to competitors who can bid lower, or leaving margin on the table by winning at prices that do not reflect the real optimized cost. [Author estimate - verify by running a VRP solver against 3 to 5 historical BIDs and comparing truck count outputs.] For a company operating R$500,000 to R$5,000,000 in monthly freight revenue, a 1% improvement in BID pricing accuracy translates to R$5,000 to R$50,000 per month in won revenue or protected margin - a return that covers the full cost of building and running this tool within a single BID cycle. [Author estimate - verify against company contract values; benchmark against ANTT or NTC&Logistica Brazilian freight market data]
+If static spreadsheet calculations cause the company to over-estimate truck requirements by 10 to 15% on average across BID cycles, the company is systematically submitting freight rates that are higher than necessary - either losing BIDs to competitors who can bid lower, or leaving margin on the table by winning at prices that do not reflect the real optimized cost. [Author estimate - verify by running a MILP solver against 3 to 5 historical BIDs and comparing truck count outputs.] For a company operating R$500,000 to R$5,000,000 in monthly freight revenue, a 1% improvement in BID pricing accuracy translates to R$5,000 to R$50,000 per month in won revenue or protected margin - a return that covers the full cost of building and running this tool within a single BID cycle. [Author estimate - verify against company contract values; benchmark against ANTT or NTC&Logistica Brazilian freight market data]
 
 **Argument 2 - BID capacity as a growth constraint:**
-Today, the company's BID capacity is constrained by the availability and expertise of the commercial manager running the spreadsheet. The company cannot respond to more BIDs simultaneously without adding senior operations headcount. An AI-assisted VRP tool is a force-multiplier: analysts with less experience can run scenario analysis independently, senior manager time per BID drops, and the company can pursue a larger volume of BID opportunities without a proportional increase in labor cost. For a company with 50 to 500 trucks where a single new freight contract may represent R$50,000 to R$500,000 in monthly revenue, the ability to respond to 2 to 3 additional BIDs per quarter at lower preparation cost represents a significant growth lever at minimal incremental cost. [Author estimate - verify against company's average contract value, BID win rate, and manager hours per BID cycle]
+Today, the company's BID capacity is constrained by the availability and expertise of the commercial manager running the spreadsheet. The company cannot respond to more BIDs simultaneously without adding senior operations headcount. An AI-assisted MILP tool is a force-multiplier: analysts with less experience can run scenario analysis independently, senior manager time per BID drops, and the company can pursue a larger volume of BID opportunities without a proportional increase in labor cost. For a company with 50 to 500 trucks where a single new freight contract may represent R$50,000 to R$500,000 in monthly revenue, the ability to respond to 2 to 3 additional BIDs per quarter at lower preparation cost represents a significant growth lever at minimal incremental cost. [Author estimate - verify against company's average contract value, BID win rate, and manager hours per BID cycle]
 
 ---
 
 ## Bottom Line
 
-The single most important strategic bet in this plan is that mid-market Brazilian trucking companies are systematically leaving pricing competitiveness on the table in Freight BID processes because they lack access to OR tools and the expertise to use them - and that an AI-accessible VRP solver can close that gap without requiring OR knowledge from the users. Success in 6 months looks like: a validated query taxonomy from discovery, a working solver proof of concept tested against at least 3 historical BIDs, and at least one live BID run through the tool with a measurable comparison to the spreadsheet baseline on truck count accuracy and freight rate. The one thing that must be true for this to work: post-BID actuals must be captured systematically from the very first live cycle - without that feedback loop, the tool remains a one-time calculator and the data moat that justifies the investment never forms.
+The single most important strategic bet in this plan is that mid-market Brazilian trucking companies are systematically leaving pricing competitiveness on the table in Freight BID processes because they lack access to OR tools and the expertise to use them - and that an AI-accessible MILP solver can close that gap without requiring OR knowledge from the users. Success in 6 months looks like: a validated query taxonomy from discovery, a working solver proof of concept tested against at least 3 historical BIDs, and at least one live BID run through the tool with a measurable comparison to the spreadsheet baseline on truck count accuracy and freight rate. The one thing that must be true for this to work: post-BID actuals must be captured systematically from the very first live cycle - without that feedback loop, the tool remains a one-time calculator and the data moat that justifies the investment never forms.
 
 ---
 
@@ -185,7 +185,8 @@ The single most important strategic bet in this plan is that mid-market Brazilia
 | Monthly tool cost at early usage | R$2,000 to R$5,000 | Author estimate - verify against actual engineering and infra costs |
 | Monthly freight revenue range (50 to 500 trucks) | R$500,000 to R$5,000,000 | Author estimate - verify against company actuals; benchmark against ANTT or NTC&Logistica Brazilian freight market data |
 | Margin improvement from 1% pricing accuracy | R$5,000 to R$50,000/month | Author estimate derived from revenue range above - verify |
-| Estimated spreadsheet over-estimation rate | 10 to 15% | Author estimate - validate by running VRP against 3 to 5 historical BIDs |
+| Estimated spreadsheet over-estimation rate | 10 to 15% | Author estimate - validate by running MILP against 3 to 5 historical BIDs |
 | Scenario cap per BID cycle (cost control) | 20 to 50 runs | Author estimate - verify against actual BID complexity and inference cost |
 | Incremental BIDs pursuable with tool | 2 to 3 additional per quarter | Author estimate - verify against manager time per BID cycle |
 | Average contract value range | R$50,000 to R$500,000/month | Author estimate for mid-market Brazilian trucking - verify against company actuals |
+
