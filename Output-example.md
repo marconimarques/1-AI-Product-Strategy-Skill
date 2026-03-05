@@ -149,12 +149,6 @@ Users can override any solver parameter before running, accept or reject the AI'
 
 2. **Baseline solver proof of concept:** Once the query taxonomy exists, build a minimal MILP solver integration (open-source solvers such as Google OR-Tools or HiGHS are viable starting points) connected to a simple AI Agent covering the 3 to 5 most common query types from discovery. Validate against one real historical BID - use a past BID with a known outcome to compare the solver's truck count recommendation against the spreadsheet estimate and actual execution. Success criteria: the solver's recommendation is closer to actuals than the spreadsheet on at least 2 of 3 test BIDs.
 
-**Next (3 to 9 months):**
-
-1. **Full query coverage and feedback instrumentation:** Extend the AI Agent to cover the full query taxonomy identified in discovery. Instrument all three feedback loops from day one: parameter correction capture (micro), scenario usage and session-to-submission rate (meso), and BID outcome tracking - won/lost and realized vs. projected margin (macro). Without these instruments live from the first real BID, the calibration data that builds the moat is lost permanently.
-
-2. **Live BID pilot with parallel baseline:** Run the tool on 3 to 5 live BID cycles in parallel with the existing spreadsheet process. The commercial manager submits using whichever recommendation they choose, but both outputs are recorded. Success criteria: solver recommendation adopted in at least 3 live BID submissions, and measurable reduction in the gap between estimated and actual truck utilization across the pilot BIDs. This dataset becomes the foundation of the calibration moat and the evidence base for expanding tool use.
-
 ---
 
 ## Leadership
@@ -189,4 +183,5 @@ The single most important strategic bet in this plan is that mid-market Brazilia
 | Scenario cap per BID cycle (cost control) | 20 to 50 runs | Author estimate - verify against actual BID complexity and inference cost |
 | Incremental BIDs pursuable with tool | 2 to 3 additional per quarter | Author estimate - verify against manager time per BID cycle |
 | Average contract value range | R$50,000 to R$500,000/month | Author estimate for mid-market Brazilian trucking - verify against company actuals |
+
 
